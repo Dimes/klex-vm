@@ -14,7 +14,7 @@ func RecApply() *recApply {
 
 func (ap recApply) Evaluate(state *secd.Secd) *secd.Secd {
 	dump := secd.NewDump(state.S, state.E, state.C)
-	state.D.push(dump)
+	state.D.Push(dump)
 
 	// The difference between AP and RAP is that AP replaces the current
 	// environment with the function's environment. RAP, on the other hand,
@@ -25,7 +25,7 @@ func (ap recApply) Evaluate(state *secd.Secd) *secd.Secd {
 	state.E = util.CopyStack(function.Environment)
 
 	env := secd.NewEnvironment()
-	state.E.push(env)
+	state.E.Push(env)
 	for i := 0; i < function.ArgCount; i++ {
 		env.Add(state.S.Pop())
 	}

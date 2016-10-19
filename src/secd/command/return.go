@@ -14,6 +14,7 @@ func Return() *ret {
 func (r ret) Evaluate(state *secd.Secd) *secd.Secd {
 	dump := state.D.Pop().(*secd.Dump)
 	retVal := state.S.Pop()
+	state.E.Pop() // Return function environment to its original state
 
 	state.S = dump.S
 	state.E = dump.E
