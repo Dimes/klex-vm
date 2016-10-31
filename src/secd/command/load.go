@@ -5,11 +5,11 @@ import (
 )
 
 type load struct {
-	envIndex int
-	index int
+	envIndex int64
+	index int64
 }
 
-func Load(envIndex int, index int) *load {
+func Load(envIndex int64, index int64) *load {
 	return &load {envIndex, index}
 }
 

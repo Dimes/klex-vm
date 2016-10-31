@@ -5,7 +5,7 @@ import (
 )
 
 type Function struct {
-	ArgCount int
+	ArgCount int64
 	Commands []Command
 	Environment *util.Stack
 }

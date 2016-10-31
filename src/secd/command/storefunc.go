@@ -6,11 +6,11 @@ import (
 )
 
 type storeFunc struct {
-	argCount int
+	argCount int64
 	commands []Command
 }
 
-func StoreFunc(argCount int, commands []Command) *storeFunc {
+func StoreFunc(argCount int64, commands []Command) *storeFunc {
 	return &storeFunc {argCount, commands}
 }
 

@@ -26,7 +26,7 @@ func (ap recApply) Evaluate(state *secd.Secd) *secd.Secd {
 
 	env := secd.NewEnvironment()
 	state.E.Push(env)
-	for i := 0; i < function.ArgCount; i++ {
+	for i := int64(0); i < function.ArgCount; i++ {
 		env.Add(state.S.Pop())
 	}
 
@@ -36,5 +36,6 @@ func (ap recApply) Evaluate(state *secd.Secd) *secd.Secd {
 	}
 
 	state.S = util.NewStack()
+	state.S.Push(nil)
 	return state
 }

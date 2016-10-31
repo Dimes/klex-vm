@@ -14,7 +14,7 @@ func CopyStack(stack *Stack) *Stack {
 	return &Stack {clone}
 }
 
-func (s *Stack) At(index int) interface{} {
+func (s *Stack) At(index int64) interface{} {
 	return s.s[index]
 }
 

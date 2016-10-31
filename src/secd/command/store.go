@@ -5,11 +5,11 @@ import (
 )
 
 type store struct {
-	envIndex int
-	index int
+	envIndex int64
+	index int64
 }
 
-func Store(envIndex int, index int) *store {
+func Store(envIndex int64, index int64) *store {
 	return &store {envIndex, index}
 }
 
